@@ -13,7 +13,7 @@
     These entries will be pre-pended to the LUA_PATH environment variable
     -->
     <!-- <param name="script-directory" value="/usr/local/lua/?.lua"/> -->
-    <!-- <param name="script-directory" value="$${script_dir}/?.lua"/> -->
+    <param name="script-directory" value="$${script_dir}/?.lua"/>
 
     <!--<param name="xml-handler-script" value="/dp.lua"/>-->
     <!--<param name="xml-handler-bindings" value="dialplan"/>-->
@@ -28,5 +28,6 @@
     <!--<param name="startup-script" value="startup_script_2.lua"/>-->
     
     <!--<hook event="CUSTOM" subclass="conference::maintenance" script="catch-event.lua"/>-->
+    <hook event="CHANNEL_ANSWER" script="test-catch.lua"/>
   </settings>
 </configuration>
