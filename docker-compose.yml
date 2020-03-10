@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+
+  freeswitch:
+    image: freeswitch:p-host
+    #user: "1000:100"
+    build:
+      context: .
+    network_mode: "host"
+    volumes:
+      - "./freeswitch/conf:/etc/freeswitch"
+      - "./freeswitch/scripts:/usr/share/freeswitch/scripts"
