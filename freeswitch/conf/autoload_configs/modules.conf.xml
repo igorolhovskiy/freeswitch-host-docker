@@ -10,7 +10,7 @@
 
     <!-- Multi-Faceted -->
     <!-- mod_enum is a dialplan interface, an application interface and an api command interface -->
-    <load module="mod_enum"/>
+    <!-- <load module="mod_enum"/> -->
 
     <!-- XML Interfaces -->
     <!-- <load module="mod_xml_rpc"/> -->
@@ -45,12 +45,12 @@
     <!-- <load module="mod_unicall"/> -->
     <!-- <load module="mod_skinny"/> -->
     <!-- <load module="mod_khomp"/>   -->
-    <load module="mod_rtc"/>
+    <!-- <load module="mod_rtc"/> -->
     <!-- <load module="mod_rtmp"/>   -->
-    <load module="mod_verto"/>
+    <!-- <load module="mod_verto"/> -->
 
     <!-- Applications -->
-    <load module="mod_signalwire"/>
+    <!-- <load module="mod_signalwire"/> -->
     <load module="mod_commands"/>
     <load module="mod_conference"/>
     <!-- <load module="mod_curl"/> -->
@@ -87,7 +87,7 @@
     <!-- Dialplan Interfaces -->
     <!-- <load module="mod_dialplan_directory"/> -->
     <load module="mod_dialplan_xml"/>
-    <load module="mod_dialplan_asterisk"/>
+    <!-- <load module="mod_dialplan_asterisk"/> -->
 
     <!-- Codec Interfaces -->
     <load module="mod_spandsp"/>
@@ -133,7 +133,7 @@
     <!-- <load module="mod_rss"/> -->
 
     <!-- Say -->
-    <load module="mod_say_en"/>
+    <!-- <load module="mod_say_en"/> -->
     <!-- <load module="mod_say_ru"/> -->
     <!-- <load module="mod_say_zh"/> -->
     <!-- <load module="mod_say_sv"/> -->
