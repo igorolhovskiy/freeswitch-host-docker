@@ -1,3 +1,3 @@
 #!/bin/bash
 
-/usr/bin/freeswitch -nonat
+/usr/local/freeswitch/bin/freeswitch -nonat

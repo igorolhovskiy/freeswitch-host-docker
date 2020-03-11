@@ -3,11 +3,11 @@ version: "3"
 services:
 
   freeswitch:
-    image: freeswitch:p-host
+    image: freeswitch:p-host-src
     build:
       context: .
     network_mode: "host"
     volumes:
-      - "./freeswitch/conf:/etc/freeswitch"
-      - "./freeswitch/scripts:/usr/share/freeswitch/scripts"
+      - "./freeswitch/conf:/usr/local/freeswitch/conf"
+      - "./freeswitch/scripts:/usr/local/freeswitch/scripts"
     #  - "./vanilla_conf:/opt"
