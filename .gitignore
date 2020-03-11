@@ -1,2 +1,3 @@
 freeswitch/conf/freeswitch.serial
 freeswitch/conf/tls
+freeswitch/scripts/out.log

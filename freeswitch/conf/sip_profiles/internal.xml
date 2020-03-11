@@ -123,7 +123,7 @@
     <!--
         enable/disable session timers
     -->
-    <!--<param name="enable-timer" value="false"/>-->
+    <param name="enable-timer" value="false"/>
     <!--<param name="minimum-session-expires" value="120"/>-->
     <param name="apply-inbound-acl" value="domains"/>
     <!--
@@ -285,8 +285,8 @@
     <param name="ext-sip-ip" value="$${external_rtp_ip}"/>
 
     <!-- rtp inactivity timeout -->
-    <param name="rtp-timeout-sec" value="300"/>
-    <param name="rtp-hold-timeout-sec" value="1800"/>
+    <param name="media_timeout" value="300"/>
+    <param name="media_hold_timeout" value="1800"/>
     <!-- VAD choose one (out is a good choice); -->
     <!-- <param name="vad" value="in"/> -->
     <!-- <param name="vad" value="out"/> -->
