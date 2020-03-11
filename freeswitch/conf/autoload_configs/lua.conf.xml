@@ -28,6 +28,6 @@
     <!--<param name="startup-script" value="startup_script_2.lua"/>-->
     
     <!--<hook event="CUSTOM" subclass="conference::maintenance" script="catch-event.lua"/>-->
-    <hook event="CHANNEL_ANSWER" script="test-catch.lua"/>
+    <!-- <hook event="CHANNEL_ANSWER" script="test-catch.lua"/> -->
   </settings>
 </configuration>

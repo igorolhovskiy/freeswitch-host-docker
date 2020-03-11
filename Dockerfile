@@ -33,10 +33,12 @@ COPY ./freeswitch/build/modules.conf /usr/src/freeswitch/modules.conf
 RUN cd /usr/src/freeswitch \
     && ./configure \
     && make \
-    && make install
+    && make install \
+    && make moh-install \
+    && make sounds-install \
+    && ln /usr/local/freeswitch/bin/fs_cli /bin/ 
 
-COPY ./freeswitch/freeswitch_config_src /freeswitch_config
-COPY ./freeswitch/docker-entrypoint-freeswitch-src.sh /docker-entrypoint.sh
+COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN chmod +x /docker-entrypoint.sh
 
