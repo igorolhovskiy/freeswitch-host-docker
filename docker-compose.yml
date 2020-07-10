@@ -1,11 +1,29 @@
 version: "3"
 
 services:
-
   freeswitch:
-    image: freeswitch:p-host
+    image: freeswitch:002-sipp-testtool
     build:
       context: .
-    network_mode: "host"
+      dockerfile: Dockerfile.freeswitch
     volumes:
       - "./freeswitch/conf:/etc/freeswitch"
+    networks:
+      main:
+        aliases:
+          - freeswitch
+
+  sipp:
+    image: sipp:002-sipp-testtool
+    build:
+      context: .
+      dockerfile: Dockerfile.sipp
+    volumes:
+      - "./sipp:/opt"
+    networks:
+      main:
+        aliases:
+          - sipp
+
+networks:
+  main:

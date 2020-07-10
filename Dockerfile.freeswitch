@@ -1,5 +1,5 @@
 FROM debian:buster
-LABEL mainteiner = Igor Olhovskiy <IgorOlhovskiy@gmail.com>
+LABEL maintainer = Igor Olhovskiy <IgorOlhovskiy@gmail.com>
 
 # Install Required Dependencies
 RUN apt-get update \
@@ -20,7 +20,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-COPY ./docker-entrypoint.sh /docker-entrypoint.sh
+COPY ./docker-entrypoint-freeswitch.sh /docker-entrypoint.sh
 
 RUN chmod +x /docker-entrypoint.sh
 
