@@ -84,7 +84,7 @@
     <param name="log-auth-failures" value="false"/>
     <param name="forward-unsolicited-mwi-notify" value="false"/>
 
-    <param name="context" value="public"/>
+    <param name="context" value="pai-test"/>
     <param name="rfc2833-pt" value="101"/>
     <!-- port to bind to for sip traffic -->
     <param name="sip-port" value="$${internal_sip_port}"/>
@@ -125,7 +125,7 @@
     -->
     <!--<param name="enable-timer" value="false"/>-->
     <!--<param name="minimum-session-expires" value="120"/>-->
-    <param name="apply-inbound-acl" value="domains"/>
+    <param name="apply-inbound-acl" value="docker"/>
     <!--
         This defines your local network, by default we detect your local network
         and create this localnet.auto ACL for this.
