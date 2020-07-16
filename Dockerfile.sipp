@@ -9,8 +9,14 @@ RUN apt-get update \
         curl \
         net-tools \
         sngrep \
-        sipp \
+        sip-tester \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-ENTRYPOINT ["/bin/bash"]
+COPY ./docker-entrypoint-sipp.sh /docker-entrypoint.sh
+
+RUN chmod +x /docker-entrypoint.sh
+
+WORKDIR /opt
+
+ENTRYPOINT ["/docker-entrypoint.sh"]
