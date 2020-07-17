@@ -25,20 +25,35 @@
   <!--
       Content-Type: application/sdp
   -->
+  <!-- <Global variables="1" /> -->
+  <nop>
+    <action>
+      <!-- From callerID name -->
+      <assignstr assign_to="1" value="33978391481"/>
+      <!-- From callerID number -->
+      <assignstr assign_to="2" value="33978391481"/>
+      <!-- PAI name -->
+      <assignstr assign_to="3" value="33978391482"/>
+      <!-- PAI number -->
+      <assignstr assign_to="4" value="33978391482"/>
+
+    </action>
+  </nop>
+
   <send retrans="500">
     <![CDATA[
 
       INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: "33123456789" <sip:33123456789@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+      From: "[$1]" <sip:[$2]@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
       To: 33123456780 <sip:[service]@[remote_ip]:[remote_port]>
       Call-ID: [call_id]
       CSeq: 1 INVITE
-      Contact: sip:33123456789@[local_ip]:[local_port]
+      Contact: sip:[$2]@[local_ip]:[local_port]
       Max-Forwards: 70
       Subject: Performance Test
       Content-Type: application/sdp
-      P-Asserted-Identity: "33123456789" <sip:33123456789@[local_ip]>
+      P-Asserted-Identity: "[$3]" <sip:[$4]@[local_ip]>
       Content-Length: [len]
 
       v=0
@@ -74,11 +89,11 @@
 
       ACK sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: "33123456789" <sip:33123456789@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+      From: "[$1]" <sip:[$2]@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
       To: sut <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 1 ACK
-      Contact: sip:33123456789@[local_ip]:[local_port]
+      Contact: sip:[$2]@[local_ip]:[local_port]
       Max-Forwards: 70
       Subject: Performance Test
       Content-Length: 0
@@ -96,11 +111,11 @@
 
       BYE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
       Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
-      From: "33123456789" <sip:33123456789@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
+      From: "[$1]" <sip:[$2]@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
       To: sut <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]
       CSeq: 2 BYE
-      Contact: sip:33123456789@[local_ip]:[local_port]
+      Contact: sip:[$2]@[local_ip]:[local_port]
       Max-Forwards: 70
       Subject: Performance Test
       Content-Length: 0
@@ -118,4 +133,3 @@
   <CallLengthRepartition value="10, 50, 100, 500, 1000, 5000, 10000"/>
 
 </scenario>
-

@@ -14,37 +14,27 @@
   <context name="pai-test">
 
     <extension name="pai-test">
-      <condition field="${destination_number}" expression="^.*$">
-	      <action application="info"/>
-        <action application="ring_ready"/>
-        <action application="pre_answer"/>
-        <action application="answer"/>
-        <action application="sleep" data="1000"/>
-        <action application="hangup"/>
-      </condition>
+      <condition field="destination_number" expression="^1024$"/>
+        <condition field="${sip_P-Asserted-Identity}" expression="^\+?33\d{9}$" break="never">
+
+          <condition field="${sip_from_user}" expression="^[Aa]nonymous$" break="never">
+            <action application="log" data="P1-2"/>
+          </condition>
+
+          <condition>
+            <action application="log" data="P1-1"/>
+            <action application="answer"/>
+            <action application="sleep" data="1000"/>
+            <action application="hangup"/>
+          </condition>
+
+        </condition>
+
+        <condition>
+          <action application="log" data="P2-1"/>
+          <action application="hangup"/>
+        </condition>
+      
     </extension>
-   
-    
-    <!--
-	You can place files in the public directory to get included.
-    -->
-    <!-- <X-PRE-PROCESS cmd="include" data="public/*.xml"/> -->
-    <!--
-	If you have made it this far lets challenge the caller and if they authenticate
-	lets try what they dialed in the default context. (commented out by default)
-    -->
-    <!--
-    <extension name="check_auth" continue="true">
-      <condition field="${sip_authorized}" expression="^true$" break="never">
-	<anti-action application="respond" data="407"/>
-      </condition>
-    </extension>
-    
-    <extension name="transfer_to_default">
-      <condition>
-	<action application="transfer" data="${destination_number} XML default"/>
-      </condition>
-    </extension>
-    -->
   </context>
 </include>
